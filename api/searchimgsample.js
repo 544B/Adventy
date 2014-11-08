@@ -4,7 +4,7 @@ var func;
 function searchImages(keyword,callback){
   $.ajax({
     type : 'GET',
-    url : 'imgsearch.php',
+    url : 'http://v157-7-72-80.z1d10.static.cnode.jp:8080/imgsearch.php',
       data : {keyword: keyword, limit: 4},
     dataType : 'json',
     success : _getPhotos
