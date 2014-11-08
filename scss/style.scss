@@ -55,17 +55,19 @@
 			z-index: 1;
 
 			background: #006600;
-			transition: all ease .6s;
+			transition: all ease .7s;
 			transform: rotateY(0deg);
 			transform-origin: right 0;
 			background: url(/images/1_back.png) no-repeat center center;
 		}
 		&.is_open .front {
+			transition: all ease .7s;
 			transform: perspective(300) rotateY(180deg);
 			transform-origin: right 0;
 			z-index: 1;
 		}
 		&.is_open .back {
+			transition: all ease .7s;
 			transform: perspective(300) rotateY(180deg);
 			transform-origin: right 0;
 			z-index: 4;
@@ -85,7 +87,6 @@
 		}
 		&.is_today {
 			cursor: pointer;
-
 		}
 		.tooltip {
 			z-index: 5;

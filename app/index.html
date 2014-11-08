@@ -6,15 +6,14 @@
 
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/jquery.js"></script>
-
+<script src="js/searchimgsample.js"></script>
 <script>
 (function($) {
 	$(function(){
 		var $el = $('#calender'),
 			$modal = $('#modal');
-
-			var date=new Date(),
-				today = date.getDate();
+			date = new Date(),
+			today = date.getDate();
 
 		tooltip = '<div class="tooltip">Please open here!</div>';
 
@@ -22,32 +21,42 @@
 		$el.find('.item').slice(today - 1, 25).removeClass('is_off');
 
 		$el.find('.is_today').on('click', function() {
-			$(this).addClass('is_open');
-
-			modal_open(date);
+			$el.find('.is_open').addClass('is_open');
+			var clss = $(this).attr('class');
+				console.log(clss);
+				modal_open(today);
 		})
 
 		$(document).click(function(event) { // (1)
 			$el.find('.is_today').removeClass('is_open');
+
+
 			if (!$.contains($modal[0], event.target)) { // (2)
 				$modal.fadeOut();
+
+
+
 				$modal.find('h2').html(d.getDate);
 			}
 		});
-
-		setInterval(function() {
-			$('.tooltip').addClass('pop');
-			$('.tooltip').delay(300).removeClass('pop');
-		}, 1500);
 	});
 
-	modal_open = function() {
+	modal_open = function(n) {
 		$modal = $('#modal');
 
+		callApi(Number(n),draw);
 		setTimeout(function() {
 			$modal.fadeIn();
 		}, 750);
 	}
+
+
+function draw(question,imgs){
+	$("#modal").append("<p>"+question+"</p>");
+	$.each(imgs,function(i,item){
+		$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
+	});
+}
 })(jQuery);
 </script>
 
