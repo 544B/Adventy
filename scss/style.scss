@@ -8,21 +8,114 @@
 @import "core/mixin";
 @import "core/func";
 
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
 #calender_body {
 	width: $baseWidth;
 	margin: 150px auto;
+	background: #ffde85;
+	border: solid 5px #f2cb80;
+	padding: 10px 10px 0 0;
 }
 .calender {
-	li {
+
+	&:after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+	.item {
+		float: left;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		position: relative;
 		width: $itemWidth;
 		height: $itemHeight;
-		background: #009900;
-		transition: all ease;
-		transform: rotateY(0deg);
-		transform-style: preserve-3d;
-		&:hover {
-			transform: rotateY(180deg);
+		background: url(/images/1_open.png) no-repeat center center;
+		cursor: pointer;
+		.front {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+
+			transition: all ease .7s;
+			transform: rotateY(0deg);
+			transform-origin: right 0;
+			background: url(/images/1_front.png) no-repeat center center;
+		}
+		.back {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+
+			background: #006600;
+			transition: all ease .7s;
+			transform: rotateY(0deg);
+			transform-origin: right 0;
+			background: url(/images/1_back.png) no-repeat center center;
+		}
+		&:not(.is_off):hover .front {
+			transform: perspective(300) rotateY(180deg);
+			transform-origin: right 0;
+			z-index: 1;
+		}
+		&:not(.is_off):hover .back {
+			transform: perspective(300) rotateY(180deg);
+			transform-origin: right 0;
+			z-index: 4;
+		}
+		&.is_off {
+			cursor: default;
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+				background: rgba(0,0,0,.6);
+			}
+		}
+		.toolchip {
+			font-family: 'Montserrat', sans-serif;
+			position: absolute;
+			top: -55px;
+			left: 0;
+			width: 150px;
+			height: 34px;
+			line-height: 34px;
+			text-align: center;
+			border-radius: 5px;
+			background-color:#da2b2b;
+			font-size: 15px;
+			color: #ffffff;
+			&:after {
+				content: "";
+				width: 0;
+				height: 0;
+				position: absolute;
+				bottom: -15px;
+				left: 63px;
+				border-left: transparent 10px solid;
+				border-right: transparent 10px solid;
+				border-top: #da2b2b 15px solid;
+			}
 		}
 	}
 
+	@for $i from 1 through 25 {
+		.item:nth-child(#{$i}) {
+			background-image: url(/images/#{$i}_open.png);
+			.front { background-image: url(/images/#{$i}_front.png); }
+			.back { background-image: url(/images/#{$i}_back.png); }
+		}
+	}
 }
