@@ -10,15 +10,39 @@
 <script>
 (function($) {
 	$(function(){
-		$el = $('#calender');
-		$el.find('.item').removeClass('is_off');
+		var $el = $('#calender'),
+			$modal = $('#modal');
+			$el.find('.item').removeClass('is_off');
+
+
+		$el.find('.item').on('click', function() {
+			$(this).addClass('is_open');
+			modal_open();
+		})
+		$modal.on('click', function() {
+			$el.find('.item').removeClass('is_open');
+			$(this).fadeOut();
+		});
+
+
 	});
+
+	modal_open = function() {
+		$modal = $('#modal');
+
+		setTimeout(function() {
+			$modal.fadeIn();
+		}, 750);
+	}
+
+
 })(jQuery);
 </script>
 
 </head>
 
 <body>
+	<div id="modal"><div class="modal_contents"></div></div>
 	<div id="calender_body">
 		<ul id="calender" class="calender">
 

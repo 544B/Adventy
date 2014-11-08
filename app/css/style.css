@@ -156,7 +156,7 @@ address, caption, cite, code, dfn, var {
 	background: url(/images/1_back.png) no-repeat center center;
 }
 
-.calender .item:not(.is_off):hover .front {
+.calender .item.is_open:not(.is_off) .front {
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
@@ -165,7 +165,7 @@ address, caption, cite, code, dfn, var {
 	z-index: 1;
 }
 
-.calender .item:not(.is_off):hover .back {
+.calender .item.is_open:not(.is_off) .back {
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
@@ -514,4 +514,22 @@ address, caption, cite, code, dfn, var {
 
 .calender .item:nth-child(25) .back {
 	background-image: url(/images/25_back.png);
+}
+
+#modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: none;
+	z-index: 999;
+}
+
+#modal .modal_contents {
+	background: #ffffff;
+	margin: 150px auto;
+	width: 800px;
+	height: 450px;
 }
