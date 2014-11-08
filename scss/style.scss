@@ -153,5 +153,19 @@
 		width: 800px;
 		height: 450px;
 		border-radius: 5px;
+		overflow: hidden;
+		padding: 10px;
+		p {
+			color: #555555;
+		}
+		ul li {
+			float: left;
+			width: 180px;
+			height: 180px;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 }

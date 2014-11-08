@@ -552,4 +552,21 @@ address, caption, cite, code, dfn, var {
 	width: 800px;
 	height: 450px;
 	border-radius: 5px;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#modal .modal_contents p {
+	color: #555555;
+}
+
+#modal .modal_contents ul li {
+	float: left;
+	width: 180px;
+	height: 180px;
+}
+
+#modal .modal_contents ul li img {
+	width: 100%;
+	height: auto;
 }
