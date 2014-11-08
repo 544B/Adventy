@@ -12,9 +12,9 @@
 
 #calender_body {
 	width: $baseWidth;
-	margin: 150px auto;
+	margin: 20px auto;
 	background: #ffde85;
-	border: solid 5px #f2cb80;
+	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
 }
 .calender {
@@ -32,7 +32,6 @@
 		width: $itemWidth;
 		height: $itemHeight;
 		background: url(/images/1_open.png) no-repeat center center;
-		cursor: pointer;
 		.front {
 			position: absolute;
 			top: 0;
@@ -84,10 +83,15 @@
 				background: rgba(0,0,0,.6);
 			}
 		}
-		.toolchip {
+		&.is_today {
+			cursor: pointer;
+
+		}
+		.tooltip {
+			z-index: 5;
 			font-family: 'Montserrat', sans-serif;
 			position: absolute;
-			top: -55px;
+			top: -50px;
 			left: 0;
 			width: 150px;
 			height: 34px;
@@ -97,6 +101,8 @@
 			background-color:#da2b2b;
 			font-size: 15px;
 			color: #ffffff;
+			transition: all ease .3;
+
 			&:after {
 				content: "";
 				width: 0;
@@ -108,7 +114,14 @@
 				border-right: transparent 10px solid;
 				border-top: #da2b2b 15px solid;
 			}
+			&.pop {
+				top: -60px;
+				&:after {
+
+				}
+			}
 		}
+
 	}
 
 	@for $i from 1 through 25 {
@@ -126,8 +139,11 @@
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,.6);
-	display: none;
 	z-index: 999;
+	transition: all ease .5s;
+	display: none;
+	// &.is_hidden { display: none; }
+	// &.is_opacity { opacity: 0; }
 	.modal_contents {
 		background: #ffffff;
 		margin: 150px auto;

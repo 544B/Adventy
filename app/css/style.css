@@ -19,7 +19,7 @@ hgroup, menu, nav, section, audio, video, canvas {
 }
 
 body {
-	background-color: #151920;
+	background-color: #c5bcb6;
 	color: white;
 	font-size: 12px;
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif, Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
@@ -98,9 +98,9 @@ address, caption, cite, code, dfn, var {
 
 #calender_body {
 	width: 800px;
-	margin: 150px auto;
+	margin: 20px auto;
 	background: #ffde85;
-	border: solid 5px #f2cb80;
+	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
 }
 
@@ -118,7 +118,6 @@ address, caption, cite, code, dfn, var {
 	width: 150px;
 	height: 150px;
 	background: url(/images/1_open.png) no-repeat center center;
-	cursor: pointer;
 }
 
 .calender .item .front {
@@ -189,10 +188,15 @@ address, caption, cite, code, dfn, var {
 	background: rgba(0, 0, 0, 0.6);
 }
 
-.calender .item .toolchip {
+.calender .item.is_today {
+	cursor: pointer;
+}
+
+.calender .item .tooltip {
+	z-index: 5;
 	font-family: 'Montserrat', sans-serif;
 	position: absolute;
-	top: -55px;
+	top: -50px;
 	left: 0;
 	width: 150px;
 	height: 34px;
@@ -202,9 +206,11 @@ address, caption, cite, code, dfn, var {
 	background-color: #da2b2b;
 	font-size: 15px;
 	color: #ffffff;
+	-webkit-transition: all ease .3;
+	transition: all ease .3;
 }
 
-.calender .item .toolchip:after {
+.calender .item .tooltip:after {
 	content: "";
 	width: 0;
 	height: 0;
@@ -214,6 +220,10 @@ address, caption, cite, code, dfn, var {
 	border-left: transparent 10px solid;
 	border-right: transparent 10px solid;
 	border-top: #da2b2b 15px solid;
+}
+
+.calender .item .tooltip.pop {
+	top: -60px;
 }
 
 .calender .item:nth-child(1) {
@@ -523,8 +533,10 @@ address, caption, cite, code, dfn, var {
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.6);
-	display: none;
 	z-index: 999;
+	-webkit-transition: all ease .5s;
+	transition: all ease .5s;
+	display: none;
 }
 
 #modal .modal_contents {

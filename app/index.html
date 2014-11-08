@@ -12,19 +12,32 @@
 	$(function(){
 		var $el = $('#calender'),
 			$modal = $('#modal');
-			$el.find('.item').removeClass('is_off');
 
+			var date=new Date(),
+				today = date.getDate();
 
-		$el.find('.item').on('click', function() {
+		tooltip = '<div class="tooltip">Please open here!</div>';
+
+		$el.find('.item').eq(today - 1).addClass('is_today').append(tooltip);
+		$el.find('.item').slice(today - 1, 25).removeClass('is_off');
+
+		$el.find('.is_today').on('click', function() {
 			$(this).addClass('is_open');
-			modal_open();
+			modal_open(date);
 		})
-		$modal.on('click', function() {
-			$el.find('.item').removeClass('is_open');
-			$(this).fadeOut();
+
+		$(document).click(function(event) { // (1)
+			$el.find('.is_today').removeClass('is_open');
+			if (!$.contains($modal[0], event.target)) { // (2)
+				$modal.fadeOut();
+				$modal.find('h2').html(d.getDate);
+			}
 		});
 
-
+		setInterval(function() {
+			$('.tooltip').addClass('pop');
+			$('.tooltip').delay(300).removeClass('pop');
+		}, 1500);
 	});
 
 	modal_open = function() {
@@ -34,19 +47,22 @@
 			$modal.fadeIn();
 		}, 750);
 	}
-
-
 })(jQuery);
 </script>
 
 </head>
 
 <body>
-	<div id="modal"><div class="modal_contents"></div></div>
+	<div id="modal"><div class="modal_contents">
+		<h2></h2>
+		<p></p>
+		<ul></ul>
+	</div></div>
+
 	<div id="calender_body">
 		<ul id="calender" class="calender">
 
-			<li class="item is_off"><div class="toolchip">Please open here!</div>
+			<li class="item is_off">
 				<div class="back"></div>
 				<div class="front"></div>
 			</li>
