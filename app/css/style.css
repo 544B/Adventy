@@ -145,8 +145,8 @@ address, caption, cite, code, dfn, var {
 	height: 100%;
 	z-index: 1;
 	background: #006600;
-	-webkit-transition: all ease .6s;
-	transition: all ease .6s;
+	-webkit-transition: all ease .7s;
+	transition: all ease .7s;
 	-webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 	-webkit-transform-origin: right 0;
@@ -156,6 +156,8 @@ address, caption, cite, code, dfn, var {
 }
 
 .calender .item.is_open .front {
+	-webkit-transition: all ease .7s;
+	transition: all ease .7s;
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
@@ -165,6 +167,8 @@ address, caption, cite, code, dfn, var {
 }
 
 .calender .item.is_open .back {
+	-webkit-transition: all ease .7s;
+	transition: all ease .7s;
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
