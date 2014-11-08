@@ -10,10 +10,15 @@
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
+.logo{
+	text-align: center;
+	margin: 30px auto 10px;
+}
+
 #calender_body {
 	width: $baseWidth;
 	margin: 20px auto;
-	background: #ffde85;
+	background: #c5bcb6;
 	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
 }
