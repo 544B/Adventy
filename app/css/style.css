@@ -1,0 +1,117 @@
+@charset "UTF-8";/* ==========================================================================
+   Reset
+   ========================================================================== *//* Resetting default margin and padding
+   ========================================================================== */body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+object, iframe, pre, code, p, blockquote,
+form, fieldset, legend,
+table, th, td, caption, tbody, tfoot, thead,
+article, aside, figure, footer, header,
+hgroup, menu, nav, section, audio, video, canvas {
+	margin: 0;
+	padding: 0;
+}/* HTML, Body, Anchor
+   ========================================================================== */html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #151920;
+	color: white;
+	font-size: 12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif, Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+	line-height: 1.5;
+	word-break: break-all;
+}/* Font-size (base: 12px) */a {
+	color: #19b5fe;
+	text-decoration: none;
+	outline: 0;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	outline: 0;
+}
+
+a:hover, a:active {
+	color: #19b5fe;
+	text-decoration: none;
+}/* Heading, Paragraph
+   ========================================================================== */h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}/* List
+   ========================================================================== */ul, ol {
+	list-style: none;
+}/* Table
+   ========================================================================== */table {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+caption, th, td {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}/* Form
+   ========================================================================== */fieldset {
+	border: none;
+}
+
+input, textarea, select, label {
+	vertical-align: middle;
+}
+
+textarea {
+	overflow: auto;
+}/* Other
+   ========================================================================== */img {
+	vertical-align: bottom;
+}
+
+object {
+	vertical-align: middle;
+	outline: none;
+}
+
+audio,
+canvas,
+video {
+	vertical-align: middle;
+}
+
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+address, caption, cite, code, dfn, var {
+	font-weight: normal;
+	font-style: normal;
+}
+
+#calender_body {
+	width: 900px;
+	margin: 150px auto;
+}
+
+.calender li {
+	width: 150px;
+	height: 150px;
+	background: #009900;
+	-webkit-transition: all ease;
+	transition: all ease;
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.calender li:hover {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
