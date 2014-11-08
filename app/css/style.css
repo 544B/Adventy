@@ -536,7 +536,7 @@ address, caption, cite, code, dfn, var {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.3);
 	display: none;
 	z-index: 999;
 }
@@ -546,4 +546,5 @@ address, caption, cite, code, dfn, var {
 	margin: 150px auto;
 	width: 800px;
 	height: 450px;
+	border-radius: 5px;
 }
