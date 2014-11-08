@@ -19,7 +19,7 @@ hgroup, menu, nav, section, audio, video, canvas {
 }
 
 body {
-	background-color: #c5bcb6;
+	background-color: #eeeeee;
 	color: white;
 	font-size: 12px;
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif, Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
@@ -104,7 +104,7 @@ address, caption, cite, code, dfn, var {
 #calender_body {
 	width: 800px;
 	margin: 20px auto;
-	background: #ffde85;
+	background: #c5bcb6;
 	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
 }
