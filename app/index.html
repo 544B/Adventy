@@ -46,7 +46,7 @@
 
 
 function draw(question,imgs){
-	$("#modal").append("<p>"+question+"</p>");
+	$("#modal").find('.modal_contensts p').html(question);
 	$.each(imgs,function(i,item){
 		$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
 	});
