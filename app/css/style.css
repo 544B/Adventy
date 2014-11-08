@@ -127,8 +127,8 @@ address, caption, cite, code, dfn, var {
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	-webkit-transition: all ease .7s;
-	transition: all ease .7s;
+	-webkit-transition: all ease .6s;
+	transition: all ease .6s;
 	-webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 	-webkit-transform-origin: right 0;
@@ -145,8 +145,8 @@ address, caption, cite, code, dfn, var {
 	height: 100%;
 	z-index: 1;
 	background: #006600;
-	-webkit-transition: all ease .7s;
-	transition: all ease .7s;
+	-webkit-transition: all ease .6s;
+	transition: all ease .6s;
 	-webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 	-webkit-transform-origin: right 0;
@@ -155,7 +155,7 @@ address, caption, cite, code, dfn, var {
 	background: url(/images/1_back.png) no-repeat center center;
 }
 
-.calender .item.is_open:not(.is_off) .front {
+.calender .item.is_open .front {
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
@@ -164,7 +164,7 @@ address, caption, cite, code, dfn, var {
 	z-index: 1;
 }
 
-.calender .item.is_open:not(.is_off) .back {
+.calender .item.is_open .back {
 	-webkit-transform: perspective(300) rotateY(180deg);
 	transform: perspective(300) rotateY(180deg);
 	-webkit-transform-origin: right 0;
@@ -206,8 +206,8 @@ address, caption, cite, code, dfn, var {
 	background-color: #da2b2b;
 	font-size: 15px;
 	color: #ffffff;
-	-webkit-transition: all ease .3;
-	transition: all ease .3;
+	-webkit-transition: all ease .3s;
+	transition: all ease .3s;
 }
 
 .calender .item .tooltip:after {
@@ -223,7 +223,7 @@ address, caption, cite, code, dfn, var {
 }
 
 .calender .item .tooltip.pop {
-	top: -60px;
+	top: -5px;
 }
 
 .calender .item:nth-child(1) {
@@ -533,10 +533,8 @@ address, caption, cite, code, dfn, var {
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.6);
-	z-index: 999;
-	-webkit-transition: all ease .5s;
-	transition: all ease .5s;
 	display: none;
+	z-index: 999;
 }
 
 #modal .modal_contents {

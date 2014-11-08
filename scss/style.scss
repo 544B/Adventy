@@ -17,8 +17,8 @@
 	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
 }
-.calender {
 
+.calender {
 	&:after {
 		display: table;
 		clear: both;
@@ -40,7 +40,7 @@
 			height: 100%;
 			z-index: 2;
 
-			transition: all ease .7s;
+			transition: all ease .6s;
 			transform: rotateY(0deg);
 			transform-origin: right 0;
 			background: url(/images/1_front.png) no-repeat center center;
@@ -55,17 +55,17 @@
 			z-index: 1;
 
 			background: #006600;
-			transition: all ease .7s;
+			transition: all ease .6s;
 			transform: rotateY(0deg);
 			transform-origin: right 0;
 			background: url(/images/1_back.png) no-repeat center center;
 		}
-		&.is_open:not(.is_off) .front {
+		&.is_open .front {
 			transform: perspective(300) rotateY(180deg);
 			transform-origin: right 0;
 			z-index: 1;
 		}
-		&.is_open:not(.is_off) .back {
+		&.is_open .back {
 			transform: perspective(300) rotateY(180deg);
 			transform-origin: right 0;
 			z-index: 4;
@@ -101,7 +101,7 @@
 			background-color:#da2b2b;
 			font-size: 15px;
 			color: #ffffff;
-			transition: all ease .3;
+			transition: all ease .3s;
 
 			&:after {
 				content: "";
@@ -115,7 +115,7 @@
 				border-top: #da2b2b 15px solid;
 			}
 			&.pop {
-				top: -60px;
+				top: -5px;
 				&:after {
 
 				}
@@ -139,11 +139,8 @@
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,.6);
-	z-index: 999;
-	transition: all ease .5s;
 	display: none;
-	// &.is_hidden { display: none; }
-	// &.is_opacity { opacity: 0; }
+	z-index: 999;
 	.modal_contents {
 		background: #ffffff;
 		margin: 150px auto;
