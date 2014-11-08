@@ -96,6 +96,11 @@ address, caption, cite, code, dfn, var {
 	font-style: normal;
 }
 
+.logo {
+	text-align: center;
+	margin: 30px auto 10px;
+}
+
 #calender_body {
 	width: 800px;
 	margin: 20px auto;
