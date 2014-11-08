@@ -11,11 +11,10 @@
 (function($) {
 	$(function(){
 		var $el = $('#calender'),
-			$modal = $('#modal');
+			$modal = $('#modal'),
 			date = new Date(),
-			today = date.getDate();
-
-		tooltip = '<div class="tooltip">Please open here!</div>';
+			today = date.getDate(),
+			tooltip = '<div class="tooltip">Please open here!</div>';
 
 		$el.find('.item').eq(today - 1).addClass('is_today').append(tooltip);
 		$el.find('.item').slice(today - 1, 25).removeClass('is_off');
@@ -26,8 +25,8 @@
 				modal_open(today);
 		})
 
-		$(document).click(function(event) {
-			if (!$.contains($modal[0], event.target)) {
+		$(document).click(function(e) {
+			if (!$.contains($modal[0], e.target)) {
 				$modal.fadeOut();
 
 				//$el.find('.is_open').removeClass('is_open');
@@ -48,7 +47,6 @@
 
 function draw(question,imgs){
 	$("#modal").append("<p>"+question+"</p>");
-
 	$.each(imgs,function(i,item){
 		$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
 	});
