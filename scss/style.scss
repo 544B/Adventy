@@ -123,11 +123,11 @@
 				width: 0;
 				height: 0;
 				position: absolute;
-				bottom: -15px;
+				bottom: -10px;
 				left: 63px;
 				border-left: transparent 10px solid;
 				border-right: transparent 10px solid;
-				border-top: #da2b2b 15px solid;
+				border-top: #da2b2b 10px solid;
 			}
 		}
 	}
@@ -208,9 +208,9 @@
 	}
 }
 @keyframes bound {
-    0% { top: -50px; }
-    50% { top: -60px; }
-    100% { top: -50px; }
+    0% { top: -25px; }
+    50% { top: -15px; }
+    100% { top: -25px; }
 }
 
 
