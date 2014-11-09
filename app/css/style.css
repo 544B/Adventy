@@ -217,6 +217,8 @@ address, caption, cite, code, dfn, var {
 	color: #ffffff;
 	-webkit-transition: all ease .3s;
 	transition: all ease .3s;
+	-webkit-animation: bound 1s infinite;
+	animation: bound 1s infinite;
 }
 
 .calender .item .tooltip:after {
@@ -229,10 +231,6 @@ address, caption, cite, code, dfn, var {
 	border-left: transparent 10px solid;
 	border-right: transparent 10px solid;
 	border-top: #da2b2b 15px solid;
-}
-
-.calender .item .tooltip.pop {
-	top: -5px;
 }
 
 .calender .item:nth-child(1) {
@@ -611,4 +609,32 @@ address, caption, cite, code, dfn, var {
 #modal .modal_contents ul li img {
 	width: 100%;
 	height: auto;
+}
+
+@-webkit-keyframes bound {
+	0% {
+		top: -50px;
+	}
+
+	50% {
+		top: -60px;
+	}
+
+	100% {
+		top: -50px;
+	}
+}
+
+@keyframes bound {
+	0% {
+		top: -50px;
+	}
+
+	50% {
+		top: -60px;
+	}
+
+	100% {
+		top: -50px;
+	}
 }

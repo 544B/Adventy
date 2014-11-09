@@ -30,20 +30,20 @@
 		});
 
 		function modal_open(d) {
-			$modal = $('#modal');
+			var $modal = $('#modal');
 
 			$modal.find('h2').html(d.getMonth() + '/' + today);
+			callApi(Number(today) ,draw);
 
 			setTimeout(function() {
 				$modal.fadeIn();
-				callApi(Number(today) ,draw);
 			}, 750);
 		}
 
 		function draw(question,imgs){
-			$("#modal").find('.question').html(question);
+			$modal.find('.question').html(question);
 			$.each(imgs,function(i,item){
-				$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
+				$("#modal ul").append('<li><img src="' + item + '" width="177" height="177"></li>');
 			});
 		}
 	});
