@@ -1,7 +1,7 @@
 var question = '';
 var func;
 
-function searchImages(keyword,callback){
+function searchImages(keyword){
   $.ajax({
     type : 'GET',
     url : 'imgsearch.php',
@@ -15,10 +15,9 @@ function _getPhotos(data){
     var dataStat = data.stat;
     if(dataStat == 'ok'){
     var imgs = new Array();
-
-    $.each(data.info.photo, function(i, item){
-      imgs.push(item.image_url);
-    });
+	$.each(data.info.photo,function(i,item){
+		imgs.push(item.image_url);
+	});
 
     func(quetion,imgs);
   }

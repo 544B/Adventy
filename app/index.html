@@ -21,36 +21,32 @@
 
 		$el.find('.is_today').on('click', function() {
 			$el.find('.is_today').addClass('is_open');
-			var clss = $(this).attr('class');
-				modal_open(today);
+			modal_open(date);
 		})
 
-		$(document).click(function(e) {
-			if (!$.contains($modal[0], e.target)) {
+		$modal.find('.modal_close').on('click', function() {
 				$modal.fadeOut();
-
-				//$el.find('.is_open').removeClass('is_open');
-				//$modal.find('h2').html(d.getDate);
-			}
+				$el.find('.is_open').removeClass('is_open');
 		});
+
+		function modal_open(d) {
+			$modal = $('#modal');
+
+			$modal.find('h2').html(d.getMonth() + '/' + today);
+
+			setTimeout(function() {
+				$modal.fadeIn();
+				callApi(Number(today) ,draw);
+			}, 750);
+		}
+
+		function draw(question,imgs){
+			$("#modal").find('.question').html(question);
+			$.each(imgs,function(i,item){
+				$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
+			});
+		}
 	});
-
-	modal_open = function(n) {
-		$modal = $('#modal');
-
-		setTimeout(function() {
-			$modal.fadeIn();
-			callApi(Number(n) ,draw);
-		}, 750);
-	}
-
-
-function draw(question,imgs){
-	$("#modal").find('.modal_contensts p').html(question);
-	$.each(imgs,function(i,item){
-		$("#modal ul").append('<li><img src="' + item + '" width="200" height="200"></li>');
-	});
-}
 })(jQuery);
 </script>
 
@@ -59,10 +55,14 @@ function draw(question,imgs){
 <body>
 	<h1 class="logo"><img src="images/logo.png" alt="Adventy"></h1>
 
-	<div id="modal"><div class="modal_contents">
+	<div id="modal">
+		<div class="modal_close"></div>
+		<div class="modal_contents">
 			<h2></h2>
-			<p></p>
-			<ul></ul>
+			<p class="question">クリスマスの準備はできた？</p>
+			<ul>
+			</ul>
+			<p class="copy">Powered by フォト蔵</p>
 		</div>
 	</div>
 

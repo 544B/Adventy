@@ -546,24 +546,66 @@ address, caption, cite, code, dfn, var {
 	z-index: 999;
 }
 
+#modal .modal_close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 #modal .modal_contents {
+	z-index: 1000;
+	top: 50%;
+	left: 50%;
+	margin: -225px 0 0 -400px;
+	position: absolute;
 	background: #ffffff;
-	margin: 150px auto;
-	width: 800px;
-	height: 450px;
+	width: 740px;
+	height: 390px;
 	border-radius: 5px;
 	overflow: hidden;
-	padding: 10px;
+	padding: 30px;
+}
+
+#modal .modal_contents h2 {
+	text-align: center;
+	color: #961a24;
+	font-size: 80px;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 20px;
+	line-height: 1;
 }
 
 #modal .modal_contents p {
 	color: #555555;
+	text-align: center;
+	line-height: 1;
+}
+
+#modal .modal_contents .question {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+#modal .modal_contents .copy {
+	position: absolute;
+	bottom: 30px;
+	width: 740px;
+	font-size: 14px;
 }
 
 #modal .modal_contents ul li {
 	float: left;
-	width: 180px;
-	height: 180px;
+	width: 177px;
+	height: 177px;
+	background: #baafa7;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+#modal .modal_contents ul li:first-child {
+	margin: 0;
 }
 
 #modal .modal_contents ul li img {
