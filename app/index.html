@@ -32,7 +32,7 @@
 		function modal_open(d) {
 			var $modal = $('#modal');
 
-			$modal.find('h2').html(d.getMonth() + '/' + today);
+			$modal.find('h2').html(d.getMonth() + 1 + '/' + today);
 			callApi(Number(today) ,draw);
 
 			setTimeout(function() {

@@ -65,17 +65,25 @@
 			transform-origin: right 0;
 			background: url(/images/1_back.png) no-repeat center center;
 		}
+		&.is_today:not(.is_open):hover .front {
+			transition: all ease .7s;
+			transform: perspective(300) rotateY(3deg);
+			z-index: 5;
+		}
+		&.is_today:not(.is_open):hover .back {
+			transition: all ease .7s;
+			transform: perspective(300) rotateY(3deg);
+			z-index: 4;
+		}
 		&.is_open .front {
 			transition: all ease .7s;
 			transform: perspective(300) rotateY(180deg);
-			transform-origin: right 0;
-			z-index: 1;
+			z-index: 4;
 		}
 		&.is_open .back {
 			transition: all ease .7s;
 			transform: perspective(300) rotateY(180deg);
-			transform-origin: right 0;
-			z-index: 4;
+			z-index: 5;
 		}
 		&.is_off {
 			cursor: default;
