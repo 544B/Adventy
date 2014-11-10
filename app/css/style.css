@@ -98,15 +98,33 @@ address, caption, cite, code, dfn, var {
 
 .logo {
 	text-align: center;
-	margin: 30px auto 10px;
+	margin: 40px auto 10px;
+}
+
+.logo img {
+	width: 525px;
 }
 
 #calender_body {
+	position: relative;
 	width: 800px;
-	margin: 20px auto;
+	margin: 80px auto 20px;
 	background: #c5bcb6;
 	border: solid 5px #c5bcb6;
 	padding: 10px 10px 0 0;
+}
+
+#calender_body:before {
+	display: block;
+	clear: both;
+	content: "";
+	width: 100%;
+	height: 40px;
+	background: url(/images/ribbon.png) no-repeat center bottom;
+	background-size: 337px 37px;
+	position: absolute;
+	top: -45px;
+	left: 0;
 }
 
 .calender:after {
@@ -123,6 +141,7 @@ address, caption, cite, code, dfn, var {
 	width: 150px;
 	height: 150px;
 	background: url(/images/1_open.png) no-repeat center center;
+	background-size: 100% 100%;
 }
 
 .calender .item .front {
@@ -140,6 +159,7 @@ address, caption, cite, code, dfn, var {
 	-ms-transform-origin: right 0;
 	transform-origin: right 0;
 	background: url(/images/1_front.png) no-repeat center center;
+	background-size: 100% 100%;
 }
 
 .calender .item .back {
@@ -158,6 +178,7 @@ address, caption, cite, code, dfn, var {
 	-ms-transform-origin: right 0;
 	transform-origin: right 0;
 	background: url(/images/1_back.png) no-repeat center center;
+	background-size: 100% 100%;
 }
 
 .calender .item.is_today:not(.is_open):hover .front {
