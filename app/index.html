@@ -21,7 +21,7 @@
 
 		$el.find('.is_today').on('click', function() {
 			$el.find('.is_today').addClass('is_open');
-			modal_open(date);
+			callApi(Number(today), draw);
 		})
 
 		$modal.find('.modal_close').on('click', function() {
@@ -29,23 +29,22 @@
 				$el.find('.is_open').removeClass('is_open');
 		});
 
-		function modal_open(d) {
-			var $modal = $('#modal');
-
-			$modal.find('h2').html(d.getMonth() + 1 + '/' + today);
-			callApi(Number(today) ,draw);
-
-			setTimeout(function() {
-				$modal.fadeIn();
-			}, 750);
-		}
-
 		function draw(question,imgs){
+			var imgItem = '';
+
 			$modal.find('.question').html(question);
-			$.each(imgs,function(i,item){
-				$("#modal ul").append('<li><img src="' + item + '" width="177" height="177"></li>');
+			$modal.find('h2').html(date.getMonth() + 1 + '/' + today);
+			$.each(imgs, function(i, item){
+				imgItem += '<li><img src="' + item + '" width="177" height="177"></li>';
+
+				if(i === imgs.length - 1) {
+					$modal.find('ul').html(imgItem);
+					setTimeout(function() {
+						$modal.fadeIn();
+					}, 700);
+				}
 			});
-		}
+		};
 	});
 })(jQuery);
 </script>
