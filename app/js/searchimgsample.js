@@ -4,7 +4,7 @@ var func;
 function searchImages(keyword){
   $.ajax({
     type : 'GET',
-    url : 'imgsearch.php',
+    url : 'api/imgsearch.php',
       data : {keyword: keyword, limit: 4},
     dataType : 'json',
     success : _getPhotos
@@ -25,7 +25,7 @@ function _getPhotos(data){
 
 function callApi(day,callback){
   func = callback;
-  $.get("advent.php",{d: day},
+  $.get("api/advent.php",{d: day},
     function(data){
       var getdata = JSON.parse(data);
       quetion = getdata.question;
