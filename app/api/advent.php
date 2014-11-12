@@ -28,7 +28,7 @@ $aryEvent = array(
 		),
 	'6' => array(
 		'question'	=> 'ツリーのオーナーメントの飾りつけはできた？',
-		'tags'		=> 'ツリーオーナメント',
+		'tags'		=> 'ツリー',
 		'etags'		=> 'Christmas tree ornament',
 		),
 	'7' => array(
@@ -38,7 +38,7 @@ $aryEvent = array(
 		),
 	'8' => array(
 		'question'	=> 'クリスマスミサはどこの教会にいく？',
-		'tags'		=> 'クリスマスミサ',
+		'tags'		=> '礼拝堂',
 		'etags'		=> 'Christmas worship',
 		),
 	'9' => array(
@@ -48,12 +48,12 @@ $aryEvent = array(
 		),
 	'10' => array(
 		'question'	=> 'クリスマスリースは玄関に飾った？',
-		'tags'		=> 'クリスマスリース',
+		'tags'		=> 'リース',
 		'etags'		=> 'Christmas wreath',
 		),
 	'11' => array(
 		'question'	=> 'クリスマスのお部屋の飾りつけどうする？',
-		'tags'		=> 'クリスマス飾り付け',
+		'tags'		=> 'オーナメント',
 		'etags'		=> 'Christmas ornament',
 		),
 	'12' => array(
@@ -68,7 +68,7 @@ $aryEvent = array(
 		),
 	'14' => array(
 		'question'	=> 'クリスマスの映画何かみたいね、きめた？',
-		'tags'		=> 'クリスマス映画',
+		'tags'		=> '映画',
 		'etags'		=> 'Christmas movie',
 		),
 	'15' => array(
@@ -93,7 +93,7 @@ $aryEvent = array(
 		),
 	'19' => array(
 		'question'	=> 'クリスマスキャンドルの準備はできた？',
-		'tags'		=> 'クリスマスキャンドル',
+		'tags'		=> 'キャンドル',
 		'etags'		=> 'Christmas candle',
 		),
 	'20' => array(
@@ -103,7 +103,7 @@ $aryEvent = array(
 		),
 	'21' => array(
 		'question'	=> 'クリスマスターキーはいい感じに焼けたかな？',
-		'tags'		=> 'クリスマスターキー',
+		'tags'		=> 'ごちそう',
 		'etags'		=> 'Christmas cake',
 		),
 	'22' => array(
@@ -113,7 +113,7 @@ $aryEvent = array(
 		),
 	'23' => array(
 		'question'	=> 'パーティのゲームは決めたかな？',
-		'tags'		=> 'クリスマスゲーム',
+		'tags'		=> 'ゲーム',
 		'etags'		=> 'Christmas game',
 		),
 	'24' => array(
