@@ -13,27 +13,75 @@
 		var $el = $('#calender'),
 			$modal = $('#modal'),
 			date = new Date(),
-			today = date.getDate(),
+			dateMonth = date.getMonth() + 1,
+			dateDay = date.getDate(),
 			tooltip = '<div class="tooltip">Please open here!</div>';
 
-		$el.find('.item').eq(today - 1).addClass('is_today').append(tooltip);
-		$el.find('.item').slice(today - 1, 25).removeClass('is_off');
+		if(dateMonth < 12) { preFunc(); }
+		else { mainFunc(); }
 
-		$el.find('.is_today').on('click', function() {
-			$el.find('.is_today').addClass('is_open');
-			callApi(Number(today), draw);
-		})
+		function mainFunc() {
+			init(dateDay);
 
-		$modal.find('.modal_close').on('click', function() {
+			$el.find('.is_today').on('click', function() {
+				$el.find('.is_today').addClass('is_open');
+				callApi(Number(dateDay), draw);
+			})
+
+			close();
+		};
+
+		function preFunc() {
+			var input = [],
+				konami = [38,38,40,40,37,39,37,39,66,65];
+			$(window).keyup(function(e){
+				if($modal.hasClass('coming')) {
+					input.push(e.keyCode);
+					if (input.toString().indexOf(konami) >= 0) {
+						$modal.removeClass('coming').fadeOut();
+						preInit();
+						input = [];
+					}
+				}
+			});
+
+			$modal.show();
+			$modal.addClass('coming');
+			$modal.find('h2').html('Coming Soon...');
+			$modal.find('.question').html('このページはクリスマスの期間を楽しむためのカレンダーです。<br>12月1日〜25日のみ閲覧することができます。');
+			$modal.find('.copy').html('「今すぐ見たい」という人はコナミコマンドを入力すると…？');
+		};
+
+		function preInit() {
+			init(13);
+
+			var preImg = ['/images/1_open.png','/images/2_open.png','/images/3_open.png','/images/4_open.png'];
+			$el.find('.is_today').on('click', function() {
+				$el.find('.is_today').addClass('is_open');
+				$modal.find('.copy').html('Coming Soon...');
+				draw('12月をお楽しみに！', preImg);
+			})
+
+			close();
+		}
+
+		function init(d) {
+			$el.find('.item').eq(d - 1).addClass('is_today').append(tooltip);
+			$el.find('.item').slice(d - 1, 25).removeClass('is_off');
+		}
+
+		function close() {
+			$modal.find('.modal_close').on('click', function() {
 				$modal.fadeOut();
 				$el.find('.is_open').removeClass('is_open');
-		});
+			});
+		}
 
 		function draw(question,imgs){
 			var imgItem = '';
 
 			$modal.find('.question').html(question);
-			$modal.find('h2').html(date.getMonth() + 1 + '/' + today);
+			$modal.find('h2').html(dateMonth + '/' + dateDay);
 			$.each(imgs, function(i, item){
 				imgItem += '<li><img src="' + item + '" width="177" height="177"></li>';
 

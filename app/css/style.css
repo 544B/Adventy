@@ -642,6 +642,20 @@ address, caption, cite, code, dfn, var {
 	height: auto;
 }
 
+#modal.coming .modal_contents {
+	height: 330px;
+	padding: 60px 30px;
+}
+
+#modal.coming h2 {
+	margin-bottom: 40px;
+}
+
+#modal.coming .copy {
+	bottom: 120px;
+	font-size: 16px;
+}
+
 @-webkit-keyframes bound {
 	0% {
 		top: -25px;
